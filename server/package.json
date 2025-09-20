@@ -1,0 +1,42 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "A Node.js backend server for handling authentication, media uploads, and webhooks",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "sync-all": "npm run sync-users && npm run fix-user-ids",
+    "fix-user-ids": "node scripts/fixUserIds.js",
+    "clean-invalid-apps": "node scripts/deleteInvalidJobApplications.js",
+    "sync-users": "node scripts/syncUsersFromClerk.js",
+    "server": "nodemon server.js",
+    "start": "node server.js",
+    "lint": "eslint "
+  },
+  "keywords": [],
+  "author": "Naganandhini",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/your-repo-name.git"
+  },
+  "dependencies": {
+    "@clerk/clerk-sdk-node": "^4.13.23",
+    "@clerk/express": "^1.5.2",
+    "@sentry/node": "^9.19.0",
+    "@sentry/profiling-node": "^9.19.0",
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^2.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.14.1",
+    "multer": "^1.4.5-lts.2",
+    "streamifier": "^0.1.1",
+    "svix": "^1.42.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
