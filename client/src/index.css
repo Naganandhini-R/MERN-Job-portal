@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: outfit;
+}
+
+@layer base {
+    html {    
+        scroll-behavior: smooth;
+    }
+    
+    html, body, #root {
+        height: 100%;
+        overflow-y: auto; /* Enable vertical scrolling */
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+}
+
+/* Custom scrollbar styles (visible) */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* For Firefox - show thin scrollbar */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #c1c1c1 #f1f1f1;
+}
+
+.rich-text { 
+    font-size: 15px; 
+    color: #7A787D; 
+    line-height: 1.7; 
+}
+
+.rich-text p { 
+    margin-bottom: 1rem; 
+}
+
+.rich-text h1 { 
+    font-size: 36px; 
+    font-weight: 800; 
+    color: #252525; 
+    margin: 2rem 0 1rem;
+}
+
+.rich-text h2 { 
+    font-size: 22px; 
+    font-weight: 700; 
+    color: #252525; 
+    margin: 1.75rem 0 1rem;
+}
+
+.rich-text h3 { 
+    font-size: 36px; 
+    font-weight: 800; 
+    color: #252525; 
+    margin: 1.5rem 0 1rem;
+}
+    
+.rich-text h4 { 
+    font-size: 16px; 
+    font-weight: 500; 
+    color: #444444; 
+    margin: 1.25rem 0 0.75rem;
+}
+    
+.rich-text h5 { 
+    font-size: 14px; 
+    font-weight: 400; 
+    color: #555555; 
+    margin: 1rem 0 0.5rem;
+}
+
+.rich-text h6 { 
+    font-size: 14px; 
+    font-weight: 400; 
+    color: #666666; 
+    margin: 1rem 0 0.5rem;
+}
+
+.rich-text strong {
+    font-weight: 700;
+}
+
+.rich-text ol,
+.rich-text ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    padding-left: 1.25rem;
+}
+
+.rich-text ol {
+    margin-left: 30px; 
+    list-style-type: decimal;
+}
+
+.rich-text ul {
+    margin-left: 30px; 
+    list-style-type: disc;
+}
+
+.rich-text li {
+    margin-bottom: 0.5rem;
+}
