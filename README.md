@@ -17,7 +17,7 @@ A full-stack Job Portal application built with **MERN stack** (MongoDB, Express,
 - **File storage:** Cloudinary
 
 ## Live Demo
-Check out the live demo of the **frontend and backend deployed application** here: [🚀 Live Demo](https://careertrack-live.vercel.app)
+Check out the live demo of the **frontend and backend deployed application** here: [Live Demo](https://careertrack-live.vercel.app)
 
 
 
