@@ -71,12 +71,12 @@ const ViewApplications = () => {
           <table className='w-full'>
             <thead className='bg-gray-50'>
               <tr className='border-b border-gray-200'>
-                <th className='py-4 px-4 text-left text-sm font-medium text-gray-600 uppercase tracking-wider'>#</th>
+                <th className='py-4 px-4 text-left text-sm font-medium text-gray-600 uppercase tracking-wider max-sm:hidden'>#</th>
                 <th className='py-4 px-10 text-left text-sm font-medium text-gray-600 uppercase tracking-wider'>User name</th>
                 <th className='py-4 px-4 text-left text-sm font-medium text-gray-600 uppercase tracking-wider max-sm:hidden'>Job Title</th>
                 <th className='py-4 px-4 text-left text-sm font-medium text-gray-600 uppercase tracking-wider max-sm:hidden'>Location</th>
                 <th className='py-4 text-center text-sm font-medium text-gray-600 uppercase tracking-wider'>Resume</th>
-                <th className='py-4 text-center  text-sm font-medium text-gray-600 uppercase tracking-wider '>Action</th>
+                <th className='py-4 text-center  text-sm font-medium text-gray-600 uppercase tracking-wider max-sm:hidden'>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -84,7 +84,7 @@ const ViewApplications = () => {
                 .filter((item) => item.jobId && item.userId)
                 .map((applicant, index) => (
                   <tr key={index} className='text-gray-700 hover:bg-gray-50 transition-colors'>
-                    <td className='py-3 px-4 border-b text-center'>{index + 1}</td>
+                    <td className='py-3 px-4 border-b text-center max-sm:hidden'>{index + 1}</td>
                     <td className='py-2 px-4 border-b items-center'>
                       <div className='flex items-center gap-2'>
                         <img
@@ -111,7 +111,7 @@ const ViewApplications = () => {
                         <span className='text-gray-400'>No Resume</span>
                       )}
                     </td>
-                    <td className="py-2 px-4 border-b text-center">
+                    <td className="py-2 px-4 border-b text-center max-sm:hidden">
                       <div className="flex justify-center items-center">
                         {(!applicant.status || applicant.status.toLowerCase() === 'pending' || applicant.status === '') ? (
                           <div className="flex gap-2">

@@ -97,7 +97,7 @@ const ManageJobs = () => {
             </div>
 
         </div>
-    ) : <Loading />
+    ) :<Loading />
      
 }
 

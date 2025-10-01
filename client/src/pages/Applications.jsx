@@ -304,9 +304,9 @@ const Applications = () => {
                     </div>
                   </div>
 
-                  <div className="flex gap-2">
+                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 w-full sm:w-auto">
                     <a
-                      className="bg-blue-100 hover:bg-blue-200 text-blue-700 px-4 py-2 rounded-lg font-medium transition-colors flex items-center gap-2"
+                      className="bg-blue-100 hover:bg-blue-200 text-blue-700 text-center px-4 py-2 rounded-lg font-medium transition-colors flex items-center gap-2"
                       target="_blank"
                       href={resumeUrl}
                       rel="noopener noreferrer"
@@ -412,7 +412,7 @@ const Applications = () => {
                               </svg>
                             </div>
                           )}
-                          <span className="font-medium text-gray-800">
+                          <span className="font-medium text-gray-800 max-sm:hidden">
                             {job.companyId?.name}
                           </span>
                         </div>
