@@ -47,7 +47,13 @@ export const AppContextProvider = (props) => {
       if (data.success) setCompanyData(data.company);
       else toast.error(data.message);
     } catch (error) {
-      toast.error(error.message);
+      if (error.response && error.response.status === 401) {
+        setCompanyToken(null);
+        setCompanyData(null);
+        localStorage.removeItem('companyToken');
+      } else {
+        toast.error(error.message);
+      }
     }
   };
 
@@ -61,7 +67,11 @@ export const AppContextProvider = (props) => {
       if (data.success) setUserData(data.user);
       else toast.error(data.message);
     } catch (error) {
-      toast.error(error.message);
+      if (error.response && error.response.status === 401) {
+        setUserData(null);
+      } else {
+        toast.error(error.message);
+      }
     }
   };
 
@@ -75,7 +85,11 @@ export const AppContextProvider = (props) => {
       if (data.success) setUserApplications(data.applications);
       else toast.error(data.message);
     } catch (error) {
-      toast.error(error.message);
+      if (error.response && error.response.status === 401) {
+        setUserApplications([]);
+      } else {
+        toast.error(error.message);
+      }
     }
   };
 
@@ -83,7 +97,9 @@ export const AppContextProvider = (props) => {
   useEffect(() => {
     fetchJobs();
     const storedToken = localStorage.getItem("companyToken");
-    if (storedToken) setCompanyToken(storedToken);
+    if (storedToken && storedToken !== "undefined" && storedToken !== "null") {
+      setCompanyToken(storedToken);
+    }
   }, []);
 
   // Whenever companyToken changes, fetch company data
