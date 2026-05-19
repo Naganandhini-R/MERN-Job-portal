@@ -35,6 +35,9 @@ app.get('/', (req, res) => res.send('✅ API working'));
 // Start server
 const PORT = process.env.PORT || 5000;
 Sentry.setupExpressErrorHandler(app);
-app.listen(PORT, () => console.log(`🚀 Server running on ${PORT}`));
+
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => console.log(`🚀 Server running on ${PORT}`));
+}
 
 export default app;
